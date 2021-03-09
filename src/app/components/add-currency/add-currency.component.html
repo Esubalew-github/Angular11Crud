@@ -1,0 +1,58 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="ticker">Ticker</label>
+          <input
+            type="text"
+            class="form-control"
+            id="ticker"
+            required
+            [(ngModel)]="currency.ticker"
+            name="ticker"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            class="form-control"
+            id="name"
+            required
+            [(ngModel)]="currency.name"
+            name="name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="number_of_coins">Number of coins </label>
+          <input
+            class="form-control"
+            id="number_of_coins"
+            required
+            [(ngModel)]="currency.number_of_coins"
+            name="number_of_coins"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="market_cap">Market cap</label>
+          <input
+            class="form-control"
+            id="market_cap"
+            required
+            [(ngModel)]="currency.market_cap"
+            name="market_cap"
+          />
+        </div>
+  
+        <button (click)="saveCurrency()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Currency was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newCurrency()">Add</button>
+      </div>
+    </div>
+  </div>
+  
